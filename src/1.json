@@ -1,0 +1,737 @@
+{
+  "nodes": [
+    {
+      "node_id": 0,
+      "control": {
+        "ctrl_name": "Safe",
+        "ctrl_params": [],
+        "ctrl_arity": 0
+      }
+    },
+    {
+      "node_id": 1,
+      "control": {
+        "ctrl_name": "BasicFW",
+        "ctrl_params": [],
+        "ctrl_arity": 0
+      }
+    },
+    {
+      "node_id": 2,
+      "control": {
+        "ctrl_name": "N",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 3,
+      "control": {
+        "ctrl_name": "N",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 4,
+      "control": {
+        "ctrl_name": "Safe",
+        "ctrl_params": [],
+        "ctrl_arity": 0
+      }
+    },
+    {
+      "node_id": 5,
+      "control": {
+        "ctrl_name": "BasicFW",
+        "ctrl_params": [],
+        "ctrl_arity": 0
+      }
+    },
+    {
+      "node_id": 6,
+      "control": {
+        "ctrl_name": "N",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 7,
+      "control": {
+        "ctrl_name": "N",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 8,
+      "control": {
+        "ctrl_name": "N",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 9,
+      "control": {
+        "ctrl_name": "Safe",
+        "ctrl_params": [],
+        "ctrl_arity": 0
+      }
+    },
+    {
+      "node_id": 10,
+      "control": {
+        "ctrl_name": "BasicFW",
+        "ctrl_params": [],
+        "ctrl_arity": 0
+      }
+    },
+    {
+      "node_id": 11,
+      "control": {
+        "ctrl_name": "N",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 12,
+      "control": {
+        "ctrl_name": "N",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 13,
+      "control": {
+        "ctrl_name": "Safe",
+        "ctrl_params": [],
+        "ctrl_arity": 0
+      }
+    },
+    {
+      "node_id": 14,
+      "control": {
+        "ctrl_name": "AdvFW",
+        "ctrl_params": [],
+        "ctrl_arity": 0
+      }
+    },
+    {
+      "node_id": 15,
+      "control": {
+        "ctrl_name": "N",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 16,
+      "control": {
+        "ctrl_name": "N",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 17,
+      "control": {
+        "ctrl_name": "N",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 18,
+      "control": {
+        "ctrl_name": "N",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 19,
+      "control": {
+        "ctrl_name": "Safe",
+        "ctrl_params": [],
+        "ctrl_arity": 0
+      }
+    },
+    {
+      "node_id": 20,
+      "control": {
+        "ctrl_name": "AdvFW",
+        "ctrl_params": [],
+        "ctrl_arity": 0
+      }
+    },
+    {
+      "node_id": 21,
+      "control": {
+        "ctrl_name": "N",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 22,
+      "control": {
+        "ctrl_name": "N",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 23,
+      "control": {
+        "ctrl_name": "N",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 24,
+      "control": {
+        "ctrl_name": "Safe",
+        "ctrl_params": [],
+        "ctrl_arity": 0
+      }
+    },
+    {
+      "node_id": 25,
+      "control": {
+        "ctrl_name": "BasicFW",
+        "ctrl_params": [],
+        "ctrl_arity": 0
+      }
+    },
+    {
+      "node_id": 26,
+      "control": {
+        "ctrl_name": "N",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 27,
+      "control": {
+        "ctrl_name": "N",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 28,
+      "control": {
+        "ctrl_name": "N",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 29,
+      "control": {
+        "ctrl_name": "Safe",
+        "ctrl_params": [],
+        "ctrl_arity": 0
+      }
+    },
+    {
+      "node_id": 30,
+      "control": {
+        "ctrl_name": "BasicFW",
+        "ctrl_params": [],
+        "ctrl_arity": 0
+      }
+    },
+    {
+      "node_id": 31,
+      "control": {
+        "ctrl_name": "N",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 32,
+      "control": {
+        "ctrl_name": "N",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 33,
+      "control": {
+        "ctrl_name": "Infected",
+        "ctrl_params": [],
+        "ctrl_arity": 0
+      }
+    },
+    {
+      "node_id": 34,
+      "control": {
+        "ctrl_name": "N",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 35,
+      "control": {
+        "ctrl_name": "Attacked",
+        "ctrl_params": [],
+        "ctrl_arity": 0
+      }
+    },
+    {
+      "node_id": 36,
+      "control": {
+        "ctrl_name": "N",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 37,
+      "control": {
+        "ctrl_name": "AdvFW",
+        "ctrl_params": [],
+        "ctrl_arity": 0
+      }
+    },
+    {
+      "node_id": 38,
+      "control": {
+        "ctrl_name": "N",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 39,
+      "control": {
+        "ctrl_name": "N",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 40,
+      "control": {
+        "ctrl_name": "BasicFW",
+        "ctrl_params": [],
+        "ctrl_arity": 0
+      }
+    },
+    {
+      "node_id": 41,
+      "control": {
+        "ctrl_name": "N",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    }
+  ],
+  "place_graph": {
+    "num_regions": 1,
+    "num_nodes": 42,
+    "num_sites": 0,
+    "rn": [
+      {
+        "source": 0,
+        "target": 0
+      },
+      {
+        "source": 0,
+        "target": 4
+      },
+      {
+        "source": 0,
+        "target": 9
+      },
+      {
+        "source": 0,
+        "target": 13
+      },
+      {
+        "source": 0,
+        "target": 19
+      },
+      {
+        "source": 0,
+        "target": 24
+      },
+      {
+        "source": 0,
+        "target": 29
+      },
+      {
+        "source": 0,
+        "target": 33
+      },
+      {
+        "source": 0,
+        "target": 35
+      }
+    ],
+    "rs": [],
+    "nn": [
+      {
+        "source": 0,
+        "target": 1
+      },
+      {
+        "source": 0,
+        "target": 2
+      },
+      {
+        "source": 0,
+        "target": 3
+      },
+      {
+        "source": 4,
+        "target": 5
+      },
+      {
+        "source": 4,
+        "target": 6
+      },
+      {
+        "source": 4,
+        "target": 7
+      },
+      {
+        "source": 4,
+        "target": 8
+      },
+      {
+        "source": 9,
+        "target": 10
+      },
+      {
+        "source": 9,
+        "target": 11
+      },
+      {
+        "source": 9,
+        "target": 12
+      },
+      {
+        "source": 13,
+        "target": 14
+      },
+      {
+        "source": 13,
+        "target": 15
+      },
+      {
+        "source": 13,
+        "target": 16
+      },
+      {
+        "source": 13,
+        "target": 17
+      },
+      {
+        "source": 13,
+        "target": 18
+      },
+      {
+        "source": 19,
+        "target": 20
+      },
+      {
+        "source": 19,
+        "target": 21
+      },
+      {
+        "source": 19,
+        "target": 22
+      },
+      {
+        "source": 19,
+        "target": 23
+      },
+      {
+        "source": 24,
+        "target": 25
+      },
+      {
+        "source": 24,
+        "target": 26
+      },
+      {
+        "source": 24,
+        "target": 27
+      },
+      {
+        "source": 24,
+        "target": 28
+      },
+      {
+        "source": 29,
+        "target": 30
+      },
+      {
+        "source": 29,
+        "target": 31
+      },
+      {
+        "source": 29,
+        "target": 32
+      },
+      {
+        "source": 33,
+        "target": 34
+      },
+      {
+        "source": 33,
+        "target": 40
+      },
+      {
+        "source": 33,
+        "target": 41
+      },
+      {
+        "source": 35,
+        "target": 36
+      },
+      {
+        "source": 35,
+        "target": 37
+      },
+      {
+        "source": 35,
+        "target": 38
+      },
+      {
+        "source": 35,
+        "target": 39
+      }
+    ],
+    "ns": []
+  },
+  "link_graph": [
+    {
+      "inner": [],
+      "outer": [
+        {
+          "name": "l_0_1"
+        }
+      ],
+      "ports": [
+        {
+          "node_id": 26,
+          "port_arity": 1
+        },
+        {
+          "node_id": 41,
+          "port_arity": 1
+        }
+      ]
+    },
+    {
+      "inner": [],
+      "outer": [
+        {
+          "name": "l_0_3"
+        }
+      ],
+      "ports": [
+        {
+          "node_id": 34,
+          "port_arity": 1
+        },
+        {
+          "node_id": 36,
+          "port_arity": 1
+        }
+      ]
+    },
+    {
+      "inner": [],
+      "outer": [
+        {
+          "name": "l_1_2"
+        }
+      ],
+      "ports": [
+        {
+          "node_id": 27,
+          "port_arity": 1
+        },
+        {
+          "node_id": 31,
+          "port_arity": 1
+        }
+      ]
+    },
+    {
+      "inner": [],
+      "outer": [
+        {
+          "name": "l_1_4"
+        }
+      ],
+      "ports": [
+        {
+          "node_id": 17,
+          "port_arity": 1
+        },
+        {
+          "node_id": 28,
+          "port_arity": 1
+        }
+      ]
+    },
+    {
+      "inner": [],
+      "outer": [
+        {
+          "name": "l_2_5"
+        }
+      ],
+      "ports": [
+        {
+          "node_id": 22,
+          "port_arity": 1
+        },
+        {
+          "node_id": 32,
+          "port_arity": 1
+        }
+      ]
+    },
+    {
+      "inner": [],
+      "outer": [
+        {
+          "name": "l_3_4"
+        }
+      ],
+      "ports": [
+        {
+          "node_id": 15,
+          "port_arity": 1
+        },
+        {
+          "node_id": 38,
+          "port_arity": 1
+        }
+      ]
+    },
+    {
+      "inner": [],
+      "outer": [
+        {
+          "name": "l_3_6"
+        }
+      ],
+      "ports": [
+        {
+          "node_id": 2,
+          "port_arity": 1
+        },
+        {
+          "node_id": 39,
+          "port_arity": 1
+        }
+      ]
+    },
+    {
+      "inner": [],
+      "outer": [
+        {
+          "name": "l_4_5"
+        }
+      ],
+      "ports": [
+        {
+          "node_id": 16,
+          "port_arity": 1
+        },
+        {
+          "node_id": 21,
+          "port_arity": 1
+        }
+      ]
+    },
+    {
+      "inner": [],
+      "outer": [
+        {
+          "name": "l_4_7"
+        }
+      ],
+      "ports": [
+        {
+          "node_id": 6,
+          "port_arity": 1
+        },
+        {
+          "node_id": 18,
+          "port_arity": 1
+        }
+      ]
+    },
+    {
+      "inner": [],
+      "outer": [
+        {
+          "name": "l_5_8"
+        }
+      ],
+      "ports": [
+        {
+          "node_id": 11,
+          "port_arity": 1
+        },
+        {
+          "node_id": 23,
+          "port_arity": 1
+        }
+      ]
+    },
+    {
+      "inner": [],
+      "outer": [
+        {
+          "name": "l_6_7"
+        }
+      ],
+      "ports": [
+        {
+          "node_id": 3,
+          "port_arity": 1
+        },
+        {
+          "node_id": 7,
+          "port_arity": 1
+        }
+      ]
+    },
+    {
+      "inner": [],
+      "outer": [
+        {
+          "name": "l_7_8"
+        }
+      ],
+      "ports": [
+        {
+          "node_id": 8,
+          "port_arity": 1
+        },
+        {
+          "node_id": 12,
+          "port_arity": 1
+        }
+      ]
+    }
+  ]
+}
