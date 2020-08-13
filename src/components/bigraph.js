@@ -315,6 +315,8 @@ export default class Bigraph {
                     .attr("fill",d3.color(color.get(name)).darker())
                 backlabel.filter(d=>d.data.name===name)
                     .attr("stroke",d3.color(color.get(name)).brighter(2))
+                legend.filter(d=>d===name)
+                    .select("rect").attr("fill",color.get(name))
             }
             return fun;
         }
