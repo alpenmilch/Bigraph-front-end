@@ -59,6 +59,9 @@ class Graph extends React.Component{
     checked(name,bl){
         this.bigraph.showLegend(name,bl);
     }
+    selected(name, color){
+        this.bigraph.changeColor(name,color);
+    }
     reset(){
         this.bigraph.reset();
         this.bigraph = null;
@@ -113,7 +116,7 @@ class Graph extends React.Component{
                                             <RangeSlider disabled={this.state.disabled} max={this.state.range} onChange={this.slide.bind(this)}/>
                                         </Typography>
                                         <Typography>
-                                            <LegendGroup legends={this.state.legends} onChange={this.checked.bind(this)}/>
+                                            <LegendGroup legends={this.state.legends} onChange={this.checked.bind(this)} onSelect={this.selected.bind(this)}/>
                                         </Typography>
                                         </Grid>
                                     </AccordionDetails>
@@ -124,17 +127,23 @@ class Graph extends React.Component{
                                     </AccordionSummary>
                                     <AccordionDetails>
                                         <Typography>
-                                            <form onChange={this.upload.bind(this)}>
-                                                <input accept="application/json" className={classes.input} id="upload-file" type="file"/>
-                                                <label htmlFor="upload-file">
-                                                    <Button variant="contained" className={classes.button} color="inherit" component="span" startIcon={<Publish/>}>
-                                                        Upload
+                                            <Grid container direction='row' alignItems='center' justify="space-between">
+                                                <Grid>
+                                                    <form onChange={this.upload.bind(this)}>
+                                                        <input accept="application/json" className={classes.input} id="upload-file" type="file"/>
+                                                        <label htmlFor="upload-file">
+                                                            <Button variant="contained" className={classes.button} color="inherit" component="span" startIcon={<Publish/>}>
+                                                                Upload
+                                                            </Button>
+                                                        </label>
+                                                    </form>
+                                                </Grid>
+                                                <Grid>
+                                                    <Button className={classes.button} onClick={this.export} variant="contained" color="primary" component="span" startIcon={<GetApp/>}>
+                                                        Export
                                                     </Button>
-                                                </label>
-                                            </form>
-                                            <Button className={classes.button} onClick={this.export} variant="contained" color="primary" component="span" startIcon={<GetApp/>}>
-                                                Export
-                                            </Button>
+                                                </Grid>
+                                            </Grid>
                                         </Typography>
                                     </AccordionDetails>
                                 </Accordion>

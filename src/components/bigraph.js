@@ -130,7 +130,8 @@ export default class Bigraph {
                 .attr("cy", d => d.y)
                 .attr("r", d => d.r)
                 .attr("stroke-width", 3)
-                .attr("stroke", null)
+                .attr("stroke", d => d3.color(color.get(d.data.name)).brighter(2))
+                .attr("stroke-opacity",0)
                 .attr("stroke-dasharray",d => d.data.type==="region" ? "10,10":null)
                 .on("click", d=>null
                 )
@@ -159,13 +160,16 @@ export default class Bigraph {
             var backlabel = label.clone(true).lower()
                 .style("opacity", 0)
                 .style("display", "inline")
-                .attr("stroke", null)
+                .attr("stroke", d => d3.color(color.get(d.data.name)).brighter(2))
+                .attr("stroke-opacity",0)
                 .attr("stroke-width", 3)
 
             var ports = svg.append("g").attr("class", "circlegraph")
                 .selectAll("circle").data(port).join("circle")
                 .attr("fill", d => d3.color(color.get(d.parent.data.name)).darker(0.5))
                 .attr("stroke-width", 1)
+                .attr("stroke-opacity",0)
+                .attr("stroke",d => d3.color(color.get(d.parent.data.name)).brighter(2))
                 .attr("r", 3)
                 .attr("cx",d=>d.x)
                 .attr("cy",d=>d.y)
@@ -284,10 +288,10 @@ export default class Bigraph {
                 let p = ports.filter(d => d.parent === no);
                 let l = labels.filter(d => d === no);
                 let b = backlabel.filter(d => d === no);
-                n.attr("stroke", d => bl ? d3.color(color.get(d.data.name)).brighter(2) : null);
+                n.attr("stroke-opacity", d => bl ? 1 : 0);
                 p.attr("stroke", d => bl ? d3.color(color.get(no.data.name)).brighter(2) : null);
                 l.style("opacity", d => bl ? 1 : 0);
-                b.attr("stroke", d => bl ? d3.color(color.get(no.data.name)).brighter(2) : null);
+                b.attr("stroke-opacity", d => bl ? 1:0);
             }
             var fun = {};
             fun.showRange =  function showRange(values){
@@ -299,6 +303,19 @@ export default class Bigraph {
             fun.reset = function reset(){
                 svg.selectAll("g").remove();
             }
+            fun.changeColor = function changeColor(name,col){
+                color.set(name,d3.color(col));
+                node.filter(d=>d.data.name===name)
+                    .attr("fill",color.get(name))
+                    .attr("stroke",d3.color(color.get(name)).brighter(2))
+                ports.filter(d=>d.parent.data.name===name)
+                    .attr("fill",d3.color(color.get(name)).darker(0.5))
+                    .attr("stroke",d3.color(color.get(name)).brighter(2))
+                label.filter(d=>d.data.name===name)
+                    .attr("fill",d3.color(color.get(name)).darker())
+                backlabel.filter(d=>d.data.name===name)
+                    .attr("stroke",d3.color(color.get(name)).brighter(2))
+            }
             return fun;
         }
 
@@ -309,6 +326,7 @@ export default class Bigraph {
         this.showRange = (values) => fun.showRange(values)
         this.showLegend = (name,bl) => fun.showLegend(name,bl)
         this.reset = () => fun.reset()
+        this.changeColor = (name,color) => fun.changeColor(name,color)
     }
 
 }

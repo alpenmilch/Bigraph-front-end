@@ -7,8 +7,8 @@ import LegendBox from "./legendbox";
 export default function LegendGroup(props){
 
     return(
-        <FormGroup>
-            {props.legends.map(d=> d? <LegendBox label={d.label} color={d.color} onChange={props.onChange}/>:null)}
-        </FormGroup>
+        <div>
+            {props.legends.map(d=> d? <LegendBox label={d.label} color={d.color} onChange={props.onChange} onSelect={props.onSelect}/>:null)}
+        </div>
     );
 }
