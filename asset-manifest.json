@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Bigraph-front-end/static/css/main.5f361e03.chunk.css",
-    "main.js": "/Bigraph-front-end/static/js/main.a98fe90e.chunk.js",
-    "main.js.map": "/Bigraph-front-end/static/js/main.a98fe90e.chunk.js.map",
+    "main.js": "/Bigraph-front-end/static/js/main.35d19eb3.chunk.js",
+    "main.js.map": "/Bigraph-front-end/static/js/main.35d19eb3.chunk.js.map",
     "runtime-main.js": "/Bigraph-front-end/static/js/runtime-main.b32b1d2a.js",
     "runtime-main.js.map": "/Bigraph-front-end/static/js/runtime-main.b32b1d2a.js.map",
     "static/js/2.061315cc.chunk.js": "/Bigraph-front-end/static/js/2.061315cc.chunk.js",
     "static/js/2.061315cc.chunk.js.map": "/Bigraph-front-end/static/js/2.061315cc.chunk.js.map",
     "index.html": "/Bigraph-front-end/index.html",
-    "precache-manifest.1090f338e2bba967058a18571820cc1f.js": "/Bigraph-front-end/precache-manifest.1090f338e2bba967058a18571820cc1f.js",
+    "precache-manifest.ea237748c19e03d8611139c55283e87b.js": "/Bigraph-front-end/precache-manifest.ea237748c19e03d8611139c55283e87b.js",
     "service-worker.js": "/Bigraph-front-end/service-worker.js",
     "static/css/main.5f361e03.chunk.css.map": "/Bigraph-front-end/static/css/main.5f361e03.chunk.css.map",
     "static/js/2.061315cc.chunk.js.LICENSE.txt": "/Bigraph-front-end/static/js/2.061315cc.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.b32b1d2a.js",
     "static/js/2.061315cc.chunk.js",
     "static/css/main.5f361e03.chunk.css",
-    "static/js/main.a98fe90e.chunk.js"
+    "static/js/main.35d19eb3.chunk.js"
   ]
 }
