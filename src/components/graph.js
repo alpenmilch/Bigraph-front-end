@@ -8,9 +8,7 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import {ExpandMoreOutlined, GetApp, Publish} from '@material-ui/icons';
 import RangeSlider from "./rangeslider";
-import LegendBox from "./legendbox";
 import LegendGroup from "./legendgroup";
-import bigraph from "./bigraph";
 import tpdata from '../1.json'
 import convert from "../utils/jsonconvert";
 
@@ -75,21 +73,24 @@ class Graph extends React.Component{
         //     body: file,
         // }).then(res => res.json());
         this.reset();
+        const reader = new FileReader();
+        var data
+        reader.onload=(e) => {
+            data = JSON.parse(e.target.result)
+            this.paint(convert(data))
+        }
+        reader.readAsText(file);
+    }
+
+    paint(data){
         var bigraph = new Bigraph();
-        bigraph.initialize(file);
+        bigraph.initialize(data);
         bigraph.draw("#bigraph");
         this.bigraph = bigraph;
         this.setState({disabled:false,range:(1+bigraph.depth),legends:bigraph.legends});
-
     }
     componentDidMount(){
-        var bigraph = new Bigraph();
-
-        bigraph.initialize(convert(tpdata));
-        bigraph.draw("#bigraph");
-        this.bigraph = bigraph;
-        this.setState({disabled:false,range:(1+bigraph.depth),legends:bigraph.legends})
-
+        this.paint(convert(tpdata))
     }
     render(){
         const {classes} = this.props;
