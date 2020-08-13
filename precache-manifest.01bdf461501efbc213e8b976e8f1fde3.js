@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6a733ee70292ac8f636aa5ba6f1cbf48",
+    "revision": "aec34da444508d4ba88cd56fbe5c73ea",
     "url": "/Bigraph-front-end/index.html"
   },
   {
-    "revision": "540e79efae3b66a53f92",
+    "revision": "77494ee51eb2ddf7de74",
     "url": "/Bigraph-front-end/static/css/main.5f361e03.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Bigraph-front-end/static/js/2.a9fe2587.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "540e79efae3b66a53f92",
-    "url": "/Bigraph-front-end/static/js/main.001d1d60.chunk.js"
+    "revision": "77494ee51eb2ddf7de74",
+    "url": "/Bigraph-front-end/static/js/main.914a800c.chunk.js"
   },
   {
     "revision": "50da8033d57ab4ad1f87",
