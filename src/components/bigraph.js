@@ -13,11 +13,13 @@ export default class Bigraph {
     initialize(data) {
         const width = this.width;
         const height = this.height;
+        const rad = 0.7 * height / 2
 
-        const pack = data => d3.pack().size([width * 0.5, height * 0.5]).padding(10)(d3.hierarchy(data).sum(d => 1).sort((a, b) => b.value - a.value));
+        const pack = data => d3.pack().size([width * 0.5, height * 0.5]).padding(20)(d3.hierarchy(data).sum(d => 1).sort((a, b) => b.value - a.value));
         const root = pack(data.root);
         var nodes = root.descendants();
         var links = root.links();
+        nodes.map(d=>{d.x += width/4; d.y += height/4})
 
         var namespace = Array.from(new Set(nodes.map(d => d.data.name))).sort(d3.ascending)
         var color = d3.scaleOrdinal(namespace, d3.quantize(d3.interpolateRainbow, namespace.length + 1))
@@ -40,6 +42,12 @@ export default class Bigraph {
         port.map(function (d) {
             d.parent = nodeById.get(d.parent)
         })
+        unnamed.map(d=>{d.x=width/2; d.y=height/2})
+        inner.concat(outer).map((d,i,n)=>{
+            d.x = width/2 + rad*Math.cos((i/n.length)*2*Math.PI);
+            d.y = height/2 + rad*Math.sin((i/n.length)*2*Math.PI);
+        })
+        port.map(d=>{d.x = d.parent.x;d.y=d.parent.y})
 
         var svg;
 
@@ -87,11 +95,11 @@ export default class Bigraph {
                     else return 3;
                 }).strength(1))
                 .force("link", link(links).distance(d => d.source.r - d.target.r).strength(1))
-                .force("plink", link(portlink).distance(d => d.source.r - 4).strength(1))
-                .force("edge", link(edge).distance(30).strength(0.05))
+                .force("plink", link(portlink).distance(d => d.source.r - 4).strength(2))
+                .force("edge", link(edge).distance(1).strength(0.03))
                 .force("radial", isolate(d3.forceRadial(), function (d) {
                     return d.type === "outer" | d.type === "inner"
-                }).radius(0.7 * height / 2).strength(1).x(width / 2).y(height / 2))
+                }).radius(rad).strength(1).x(width / 2).y(height / 2))
                 .force("manybody", isolate(d3.forceManyBody(), function (d) {
                     return d.type === "outer" | d.type === "inner" | d.type === "port"
                 }).distanceMin(10).strength(-5))
@@ -159,6 +167,8 @@ export default class Bigraph {
                 .attr("fill", d => d3.color(color.get(d.parent.data.name)).darker(0.5))
                 .attr("stroke-width", 1)
                 .attr("r", 3)
+                .attr("cx",d=>d.x)
+                .attr("cy",d=>d.y)
                 .attr("class", d => "port")
                 .call(drag(simulation));
 
@@ -168,6 +178,8 @@ export default class Bigraph {
                 .attr("stroke", "#999")
                 .attr("stroke-width", 1.5)
                 .attr("r", 4)
+                .attr("cx", d=>d.x)
+                .attr("cy", d=>d.y)
                 .call(drag(simulation));
 
 
@@ -177,6 +189,8 @@ export default class Bigraph {
                 .attr("stroke", "#999")
                 .attr("stroke-width", 1.5)
                 .attr("r", 4)
+                .attr("cx", d=>d.x)
+                .attr("cy", d=>d.y)
                 .call(drag(simulation));
 
             var names = svg.append("g").attr("class", "namegraph")
@@ -197,7 +211,10 @@ export default class Bigraph {
                 .selectAll("circle").data(unnamed).join("circle")
                 .attr("fill-opacity", d => 0)
                 .attr("r", 5)
+                .attr("cx", d=>d.x)
+                .attr("cy", d=>d.y)
                 .call(drag(simulation));
+
 
             var legend = svg.append("g").selectAll("g").data(namespace.slice(1)).join("g")
                 .attr("transform", (d, i) => "translate(" + (0.1 * width) + "," + (0.1 * height + i * 20) + ")")

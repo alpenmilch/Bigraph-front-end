@@ -11,6 +11,7 @@ import RangeSlider from "./rangeslider";
 import LegendGroup from "./legendgroup";
 import tpdata from '../1.json'
 import convert from "../utils/jsonconvert";
+import d3ToPng from "d3-svg-to-png";
 
 
 const style = {
@@ -81,7 +82,9 @@ class Graph extends React.Component{
         }
         reader.readAsText(file);
     }
-
+    export(){
+        d3ToPng('#bigraph','bigraph')
+    }
     paint(data){
         var bigraph = new Bigraph();
         bigraph.initialize(data);
@@ -129,7 +132,7 @@ class Graph extends React.Component{
                                                     </Button>
                                                 </label>
                                             </form>
-                                            <Button className={classes.button} variant="contained" color="primary" component="span" startIcon={<GetApp/>}>
+                                            <Button className={classes.button} onClick={this.export} variant="contained" color="primary" component="span" startIcon={<GetApp/>}>
                                                 Export
                                             </Button>
                                         </Typography>
