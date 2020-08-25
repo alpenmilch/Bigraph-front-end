@@ -240,18 +240,24 @@ export default class Bigraph {
             const ng = svg.selectAll(".namegraph").join("g");
             const allname = ng.selectAll("text").join("text");
             const labels = svg.selectAll(".labelgraph").join("g").selectAll("text").join("text")
+            const tgraph = svg.append("g")
+
 
             var transform;
+
+            const update = () => textLoc()
 
             function zoomed() {
                 transform = d3.event.transform
                 cg.attr("transform", transform);
                 lg.attr("transform", transform);
-                ng.attr("transform", transform)
+                ng.attr("transform", transform);
+                tgraph.attr("transform", transform);
                 labels.attr("transform", d => "translate(" + (transform.x + (transform.k - 1) * d.x) + "," + (transform.y + (transform.k - 1) * d.y) + ")")
             }
 
             simulation.on("tick", () => {
+                update();
                 allname
                     .attr("x", d => d.x + 20)
                     .attr("y", d => d.y);
@@ -318,6 +324,76 @@ export default class Bigraph {
                 legend.filter(d=>d===name)
                     .select("rect").attr("fill",color.get(name))
             }
+
+            function textLoc(){
+                let names = namespace.slice(1)
+                const classes = []
+                var text
+                for(let n of names){
+                    classes.push(nodes.filter(d=>d.data.name===n))
+                }
+                var texts,backs
+                function update(){
+                    text = classes.map((d,i)=>cluster(d,names[i])).reduce((a,b)=>a.concat(b))
+                    texts = tgraph.selectAll("text").data(text).join(
+                        enter=>enter.append("text"),
+                            update => update,
+                            exit => exit.remove()
+                        )
+                        .style("font", "10px sans-serif")
+                        .attr("x", d => d.x)
+                        .attr("y", d => d.y)
+                        .attr("fill", d => d3.color(color.get(d.name)).darker())
+                        .style("text-shadow", d => (
+                            "1px 1px 0 " + d3.color(color.get(d.name)).brighter(2) + ","+
+                            "1px -1px 0 " + d3.color(color.get(d.name)).brighter(2)  + ","+
+                            "-1px 1px 0 " + d3.color(color.get(d.name)).brighter(2)  + ","+
+                            "-1px -1px 0 " + d3.color(color.get(d.name)).brighter(2)
+                            )
+                        )
+                        .text(d=>d.name)
+                }
+                update()
+                return update;
+            }
+
+
+            function cluster(nodes , name){
+                const r = 20
+                const cluster = []
+
+                const quad = d3.quadtree(nodes,x,y)
+                quad.visit((d)=>{
+                    if(d.length){return ;}
+                    let cl = []
+                    let stack = []
+                    let c = quad.find(x(d.data), y(d.data), r)
+                    if (!c) {return ;}
+                    stack.push(c)
+                    quad.remove(c)
+                    while(stack.length>0) {
+                        let c = stack.pop()
+                        let t = quad.find(x(c), y(c), r)
+                        while (t !== undefined) {
+                            stack.push(t)
+                            quad.remove(t)
+                            t = quad.find(x(c), y(c), r)
+                        }
+                        cl.push(c)
+                    }
+                    cluster.push(cl)
+                })
+                const center  = cluster.map(d=>{
+                    return {
+                        x:d.map(d=>x(d)).reduce((a,b)=>(a+b))/d.length,
+                        y:d.map(d=>y(d)).reduce((a,b)=>(a+b))/d.length,
+                        size:d.length,
+                        name:name,
+                    }
+                })
+                return center;
+            }
+
             return fun;
         }
 
@@ -325,10 +401,11 @@ export default class Bigraph {
 
     draw(id){
         var fun = this.render(id);
-        this.showRange = (values) => fun.showRange(values)
-        this.showLegend = (name,bl) => fun.showLegend(name,bl)
-        this.reset = () => fun.reset()
-        this.changeColor = (name,color) => fun.changeColor(name,color)
+        this.showRange = (values) => fun.showRange(values);
+        this.showLegend = (name,bl) => fun.showLegend(name,bl);
+        this.reset = () => fun.reset();
+        this.changeColor = (name,color) => fun.changeColor(name,color);
+        this.cluster = () => fun.cluster();
     }
 
 }

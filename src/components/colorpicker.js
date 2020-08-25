@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import { ChromePicker } from 'react-color'
@@ -7,10 +7,11 @@ import {withStyles} from "@material-ui/core";
 
 
 export default function ColorPicker(props){
-    const [state, setState] = React.useState({
+    var [state, setState] = React.useState({
         display: false,
-        color: props.color,
+        color:props.color,
     });
+    useEffect(()=>setState({color: props.color}),props.color)
 
     const style = {
         root:{
@@ -50,7 +51,7 @@ export default function ColorPicker(props){
 
     return(
         <div style={style.root}>
-            <div style={style.button} backgroud={state.color} onClick={ handleClick }>
+            <div style={style.button} onClick={ handleClick }>
                 <div style={ style.color } />
             </div>
             {

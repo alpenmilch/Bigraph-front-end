@@ -66,6 +66,9 @@ class Graph extends React.Component{
         this.bigraph.reset();
         this.bigraph = null;
     }
+    test(){
+        this.bigraph.cluster();
+    }
     upload(){
         const file = document.getElementById("upload-file").files[0];
         if (file == null){return ;}
@@ -86,7 +89,7 @@ class Graph extends React.Component{
         reader.readAsText(file);
     }
     export(){
-        d3ToPng('#bigraph','bigraph')
+        d3ToPng('#bigraph','bigraph',{quality:1})
     }
     paint(data){
         var bigraph = new Bigraph();
@@ -139,7 +142,7 @@ class Graph extends React.Component{
                                                     </form>
                                                 </Grid>
                                                 <Grid>
-                                                    <Button className={classes.button} onClick={this.export} variant="contained" color="primary" component="span" startIcon={<GetApp/>}>
+                                                    <Button className={classes.button} onClick={this.test.bind(this)} variant="contained" color="primary" component="span" startIcon={<GetApp/>}>
                                                         Export
                                                     </Button>
                                                 </Grid>
