@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Bigraph-front-end/precache-manifest.ea237748c19e03d8611139c55283e87b.js"
+  "/Bigraph-front-end/precache-manifest.3177f1201a176f5b61791dde3c92b062.js"
 );
 
 self.addEventListener('message', (event) => {
