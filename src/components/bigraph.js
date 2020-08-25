@@ -100,9 +100,9 @@ export default class Bigraph {
                 .force("radial", isolate(d3.forceRadial(), function (d) {
                     return d.type === "outer" | d.type === "inner"
                 }).radius(rad).strength(1).x(width / 2).y(height / 2))
-                .force("manybody", isolate(d3.forceManyBody(), function (d) {
-                    return d.type === "outer" | d.type === "inner" | d.type === "port"
-                }).distanceMin(10).strength(-5))
+                // .force("manybody", isolate(d3.forceManyBody(), function (d) {
+                //     return d.type === "outer" | d.type === "inner" | d.type === "port"
+                // }).distanceMin(10).strength(-5))
                 .force("center", isolate(d3.forceCenter(width / 2, height / 2), function (d) {
                     return d === root
                 }))
@@ -323,6 +323,7 @@ export default class Bigraph {
                     .attr("stroke",d3.color(color.get(name)).brighter(2))
                 legend.filter(d=>d===name)
                     .select("rect").attr("fill",color.get(name))
+                update()
             }
 
             function textLoc(){
