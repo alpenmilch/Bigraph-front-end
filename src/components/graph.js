@@ -14,6 +14,8 @@ import convert from "../utils/jsonconvert";
 import d3ToPng from "d3-svg-to-png";
 import {connect} from "react-redux";
 import {uploadAction} from "../store/action";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Switch from "@material-ui/core/Switch";
 
 
 const style = {
@@ -50,6 +52,7 @@ class Graph extends React.Component{
         this.state = {
             disabled:true,
             range:1,
+            switch:false,
             legends:[],
         };
     }
@@ -63,6 +66,11 @@ class Graph extends React.Component{
     }
     selected(name, color){
         this.bigraph.changeColor(name,color);
+    }
+    center(bl){
+        this.setState({switch:bl})
+        this.bigraph.showCenter(bl)
+
     }
     reset(){
         this.bigraph.reset();
@@ -92,7 +100,8 @@ class Graph extends React.Component{
         reader.readAsText(file);
     }
     export(){
-        d3ToPng('#bigraph','bigraph',{quality:1})
+        this.bigraph.fpause(false)
+        d3ToPng('#bigraph','bigraph',{quality:1}).then(()=>this.bigraph.fpause(true))
     }
     paint(data){
         this.data = data;
@@ -111,6 +120,11 @@ class Graph extends React.Component{
     }
 
     render(){
+        var switchCenter = (event) => {
+            if(event.target){
+                event.target.checked ? this.center(true):this.center(false)
+            }
+        }
         const {classes} = this.props;
         return(
             <div>
@@ -124,12 +138,18 @@ class Graph extends React.Component{
                                     </AccordionSummary>
                                     <AccordionDetails>
                                         <Grid container direction="column">
-                                        <Typography>
-                                            <RangeSlider disabled={this.state.disabled} max={this.state.range} onChange={this.slide.bind(this)}/>
-                                        </Typography>
-                                        <Typography>
-                                            <LegendGroup legends={this.state.legends} onChange={this.checked.bind(this)} onSelect={this.selected.bind(this)}/>
-                                        </Typography>
+                                            <Typography>
+                                                <RangeSlider disabled={this.state.disabled} max={this.state.range} onChange={this.slide.bind(this)}/>
+                                            </Typography>
+                                            <Typography>
+                                                <LegendGroup legends={this.state.legends} onChange={this.checked.bind(this)} onSelect={this.selected.bind(this)}/>
+                                            </Typography>
+                                            <Typography>
+                                                <FormControlLabel
+                                                    control={<Switch checked={this.state.switch} onChange={switchCenter} />}
+                                                    label="Label Aggregation"
+                                                />
+                                            </Typography>
                                         </Grid>
                                     </AccordionDetails>
                                 </Accordion>

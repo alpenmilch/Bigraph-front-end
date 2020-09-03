@@ -154,14 +154,15 @@ export default class Bigraph {
                 .attr("x", d => d.x)
                 .attr("y", d => d.y)
                 .attr("fill", d => d3.color(color.get(d.data.name)).darker())
-                .style("opacity", 0)
+                .style("opacity", 1)
                 .style("display", "inline")
+                .style("visibility","hidden")
                 .text(d => d.data.name);
             var backlabel = label.clone(true).lower()
-                .style("opacity", 0)
+                .style("opacity", 1)
                 .style("display", "inline")
                 .attr("stroke", d => d3.color(color.get(d.data.name)).brighter(2))
-                .attr("stroke-opacity",0)
+                .attr("stroke-opacity",1)
                 .attr("stroke-width", 3)
 
             var ports = svg.append("g").attr("class", "circlegraph")
@@ -291,22 +292,35 @@ export default class Bigraph {
             function showNode(no, bl) {
                 let n = node.filter(d => d === no);
                 let p = ports.filter(d => d.parent === no);
-                let l = labels.filter(d => d === no);
-                let b = backlabel.filter(d => d === no);
                 n.attr("stroke-opacity", d => bl ? 1 : 0);
                 p.attr("stroke", d => bl ? d3.color(color.get(no.data.name)).brighter(2) : null);
-                l.style("opacity", d => bl ? 1 : 0);
-                b.attr("stroke-opacity", d => bl ? 1:0);
             }
+            function showText(no, bl) {
+                let l = labels.filter(d => d === no);
+                let b = backlabel.filter(d => d === no);
+                l.style("visibility", d => bl ? 'visible' : 'hidden');
+                b.style("visibility", d => bl ? 'visible' : 'hidden');
+            }
+            function showCluster(bl) {
+                texts.style("visibility", d => bl ? 'visible' : 'hidden');
+                trig = bl;
+            }
+            var trig = false
             var fun = {};
             fun.showRange =  function showRange(values){
                 nodes.map(d=> values[0]<=d.depth&d.depth<=values[1] ? showNode(d,true):showNode(d,false));
             }
             fun.showLegend = function showLegend(name,bl){
-                nodes.map(d=> d.data.name === name? showNode(d,bl):null);
+                nodes.map(d=> d.data.name === name? showText(d,bl):null);
+            }
+            fun.showCenter= function showCenter(bl){
+                showCluster(bl)
             }
             fun.reset = function reset(){
                 svg.selectAll("g").remove();
+            }
+            fun.fpause = function (bl){
+                bl ? simulation.restart():simulation.stop()
             }
             fun.changeColor = function changeColor(name,col){
                 color.set(name,d3.color(col));
@@ -325,6 +339,8 @@ export default class Bigraph {
                 update()
             }
 
+
+            var texts
             function textLoc(){
                 let names = namespace.slice(1)
                 const classes = []
@@ -332,7 +348,6 @@ export default class Bigraph {
                 for(let n of names){
                     classes.push(nodes.filter(d=>d.data.name===n))
                 }
-                var texts,backs
                 function update(){
                     text = classes.map((d,i)=>cluster(d,names[i])).reduce((a,b)=>a.concat(b))
                     texts = tgraph.selectAll("text").data(text).join(
@@ -351,6 +366,7 @@ export default class Bigraph {
                             "-1px -1px 0 " + d3.color(color.get(d.name)).brighter(2)
                             )
                         )
+                        .style("visibility", d => trig ? 'visible' : 'hidden')
                         .text(d=>d.name)
                 }
                 update()
@@ -406,6 +422,8 @@ export default class Bigraph {
         this.reset = () => fun.reset();
         this.changeColor = (name,color) => fun.changeColor(name,color);
         this.cluster = () => fun.cluster();
+        this.showCenter = (bl) => fun.showCenter(bl);
+        this.fpause = (bl) => fun.fpause(bl);
     }
 
 }
