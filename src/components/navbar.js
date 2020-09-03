@@ -50,8 +50,15 @@ class NavBar extends React.Component{
                                 Graph
                             </NavLink>
                         </Typography>
+                        <Typography className={classes.title} variant="h5">
+                            <NavLink to='/example' className={classes.navlink}>
+                                Example
+                            </NavLink>
+                        </Typography>
                         <Typography className={classes.button} variant="h5">
-                            <Button color='inherit'>Test</Button>
+                            <NavLink to='/' className={classes.navlink}>
+                                <Button color='inherit'>test</Button>
+                            </NavLink>
                         </Typography>
                     </Toolbar>
                 </AppBar>

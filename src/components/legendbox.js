@@ -1,10 +1,6 @@
 import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
-import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import ColorPicker from "./colorpicker";
 import Grid from "@material-ui/core/Grid";
 const style = {

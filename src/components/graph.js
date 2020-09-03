@@ -9,9 +9,11 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import {ExpandMoreOutlined, GetApp, Publish} from '@material-ui/icons';
 import RangeSlider from "./rangeslider";
 import LegendGroup from "./legendgroup";
-import tpdata from '../1.json'
+import tpdata from '../data/1.json'
 import convert from "../utils/jsonconvert";
 import d3ToPng from "d3-svg-to-png";
+import {connect} from "react-redux";
+import {uploadAction} from "../store/action";
 
 
 const style = {
@@ -84,7 +86,8 @@ class Graph extends React.Component{
         var data
         reader.onload=(e) => {
             data = JSON.parse(e.target.result)
-            this.paint(convert(data))
+            this.props.afterUpload(file.name,data);
+            this.paint(data)
         }
         reader.readAsText(file);
     }
@@ -92,15 +95,21 @@ class Graph extends React.Component{
         d3ToPng('#bigraph','bigraph',{quality:1})
     }
     paint(data){
+        this.data = data;
         var bigraph = new Bigraph();
-        bigraph.initialize(data);
+        bigraph.initialize(convert(data));
         bigraph.draw("#bigraph");
         this.bigraph = bigraph;
         this.setState({disabled:false,range:(1+bigraph.depth),legends:bigraph.legends});
     }
     componentDidMount(){
-        this.paint(convert(tpdata))
+        var tpdata = this.props.data
+        this.paint(tpdata)
     }
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        console.log()
+    }
+
     render(){
         const {classes} = this.props;
         return(
@@ -142,7 +151,7 @@ class Graph extends React.Component{
                                                     </form>
                                                 </Grid>
                                                 <Grid>
-                                                    <Button className={classes.button} onClick={this.test.bind(this)} variant="contained" color="primary" component="span" startIcon={<GetApp/>}>
+                                                    <Button className={classes.button} onClick={this.export.bind(this)} variant="contained" color="primary" component="span" startIcon={<GetApp/>}>
                                                         Export
                                                     </Button>
                                                 </Grid>
@@ -163,4 +172,14 @@ class Graph extends React.Component{
 
 }
 
-export default withStyles(style) (Graph);
+function mapDispatchToProps(dispatch) {
+    return {
+        afterUpload: (n,d) => {return dispatch(uploadAction(n,d))}
+    }
+}
+
+
+export default connect(
+    (state, oprops) => {oprops.data = state.data},
+    mapDispatchToProps
+)(withStyles(style) (Graph));

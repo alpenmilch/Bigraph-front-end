@@ -12,7 +12,6 @@ export default function ColorPicker(props){
         color:props.color,
     });
     useEffect(()=>setState({color: props.color}),props.color)
-
     const style = {
         root:{
             alignContent:'space-around',

@@ -1,0 +1,439 @@
+{
+  "nodes": [
+    {
+      "node_id": 0,
+      "control": {
+        "ctrl_name": "H",
+        "ctrl_params": [],
+        "ctrl_arity": 0
+      }
+    },
+    {
+      "node_id": 1,
+      "control": {
+        "ctrl_name": "Nurse",
+        "ctrl_params": [],
+        "ctrl_arity": 2
+      }
+    },
+    {
+      "node_id": 2,
+      "control": {
+        "ctrl_name": "Nurse",
+        "ctrl_params": [],
+        "ctrl_arity": 2
+      }
+    },
+    {
+      "node_id": 3,
+      "control": {
+        "ctrl_name": "Nurse",
+        "ctrl_params": [],
+        "ctrl_arity": 2
+      }
+    },
+    {
+      "node_id": 4,
+      "control": {
+        "ctrl_name": "DB",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 5,
+      "control": {
+        "ctrl_name": "Record",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 6,
+      "control": {
+        "ctrl_name": "DBadmin",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 7,
+      "control": {
+        "ctrl_name": "Doc",
+        "ctrl_params": [],
+        "ctrl_arity": 2
+      }
+    },
+    {
+      "node_id": 8,
+      "control": {
+        "ctrl_name": "Ref",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 9,
+      "control": {
+        "ctrl_name": "Record",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 10,
+      "control": {
+        "ctrl_name": "Id",
+        "ctrl_params": [
+          {
+            "ctrl_int": 0
+          }
+        ],
+        "ctrl_arity": 0
+      }
+    },
+    {
+      "node_id": 11,
+      "control": {
+        "ctrl_name": "Private",
+        "ctrl_params": [],
+        "ctrl_arity": 0
+      }
+    },
+    {
+      "node_id": 12,
+      "control": {
+        "ctrl_name": "Data",
+        "ctrl_params": [],
+        "ctrl_arity": 0
+      }
+    },
+    {
+      "node_id": 13,
+      "control": {
+        "ctrl_name": "Record",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 14,
+      "control": {
+        "ctrl_name": "Id",
+        "ctrl_params": [
+          {
+            "ctrl_int": 1
+          }
+        ],
+        "ctrl_arity": 0
+      }
+    },
+    {
+      "node_id": 15,
+      "control": {
+        "ctrl_name": "Private",
+        "ctrl_params": [],
+        "ctrl_arity": 0
+      }
+    },
+    {
+      "node_id": 16,
+      "control": {
+        "ctrl_name": "Data",
+        "ctrl_params": [],
+        "ctrl_arity": 0
+      }
+    },
+    {
+      "node_id": 17,
+      "control": {
+        "ctrl_name": "Record",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 18,
+      "control": {
+        "ctrl_name": "Id",
+        "ctrl_params": [
+          {
+            "ctrl_int": 2
+          }
+        ],
+        "ctrl_arity": 0
+      }
+    },
+    {
+      "node_id": 19,
+      "control": {
+        "ctrl_name": "Private",
+        "ctrl_params": [],
+        "ctrl_arity": 0
+      }
+    },
+    {
+      "node_id": 20,
+      "control": {
+        "ctrl_name": "Data",
+        "ctrl_params": [],
+        "ctrl_arity": 0
+      }
+    },
+    {
+      "node_id": 21,
+      "control": {
+        "ctrl_name": "Id",
+        "ctrl_params": [
+          {
+            "ctrl_int": 3
+          }
+        ],
+        "ctrl_arity": 0
+      }
+    },
+    {
+      "node_id": 22,
+      "control": {
+        "ctrl_name": "Private",
+        "ctrl_params": [],
+        "ctrl_arity": 0
+      }
+    },
+    {
+      "node_id": 23,
+      "control": {
+        "ctrl_name": "Data",
+        "ctrl_params": [],
+        "ctrl_arity": 0
+      }
+    }
+  ],
+  "place_graph": {
+    "num_regions": 1,
+    "num_nodes": 24,
+    "num_sites": 0,
+    "rn": [
+      {
+        "source": 0,
+        "target": 0
+      }
+    ],
+    "rs": [],
+    "nn": [
+      {
+        "source": 0,
+        "target": 1
+      },
+      {
+        "source": 0,
+        "target": 2
+      },
+      {
+        "source": 0,
+        "target": 3
+      },
+      {
+        "source": 0,
+        "target": 4
+      },
+      {
+        "source": 0,
+        "target": 6
+      },
+      {
+        "source": 0,
+        "target": 7
+      },
+      {
+        "source": 4,
+        "target": 5
+      },
+      {
+        "source": 4,
+        "target": 9
+      },
+      {
+        "source": 4,
+        "target": 13
+      },
+      {
+        "source": 4,
+        "target": 17
+      },
+      {
+        "source": 5,
+        "target": 21
+      },
+      {
+        "source": 5,
+        "target": 22
+      },
+      {
+        "source": 7,
+        "target": 8
+      },
+      {
+        "source": 9,
+        "target": 10
+      },
+      {
+        "source": 9,
+        "target": 11
+      },
+      {
+        "source": 11,
+        "target": 12
+      },
+      {
+        "source": 13,
+        "target": 14
+      },
+      {
+        "source": 13,
+        "target": 15
+      },
+      {
+        "source": 15,
+        "target": 16
+      },
+      {
+        "source": 17,
+        "target": 18
+      },
+      {
+        "source": 17,
+        "target": 19
+      },
+      {
+        "source": 19,
+        "target": 20
+      },
+      {
+        "source": 22,
+        "target": 23
+      }
+    ],
+    "ns": []
+  },
+  "link_graph": [
+    {
+      "inner": [],
+      "outer": [],
+      "ports": [
+        {
+          "node_id": 1,
+          "port_arity": 1
+        }
+      ]
+    },
+    {
+      "inner": [],
+      "outer": [],
+      "ports": [
+        {
+          "node_id": 2,
+          "port_arity": 1
+        }
+      ]
+    },
+    {
+      "inner": [],
+      "outer": [],
+      "ports": [
+        {
+          "node_id": 3,
+          "port_arity": 1
+        }
+      ]
+    },
+    {
+      "inner": [],
+      "outer": [],
+      "ports": [
+        {
+          "node_id": 5,
+          "port_arity": 1
+        },
+        {
+          "node_id": 8,
+          "port_arity": 1
+        }
+      ]
+    },
+    {
+      "inner": [],
+      "outer": [],
+      "ports": [
+        {
+          "node_id": 7,
+          "port_arity": 1
+        }
+      ]
+    },
+    {
+      "inner": [],
+      "outer": [],
+      "ports": [
+        {
+          "node_id": 9,
+          "port_arity": 1
+        }
+      ]
+    },
+    {
+      "inner": [],
+      "outer": [],
+      "ports": [
+        {
+          "node_id": 13,
+          "port_arity": 1
+        }
+      ]
+    },
+    {
+      "inner": [],
+      "outer": [],
+      "ports": [
+        {
+          "node_id": 17,
+          "port_arity": 1
+        }
+      ]
+    },
+    {
+      "inner": [],
+      "outer": [
+        {
+          "name": "db"
+        }
+      ],
+      "ports": [
+        {
+          "node_id": 1,
+          "port_arity": 1
+        },
+        {
+          "node_id": 2,
+          "port_arity": 1
+        },
+        {
+          "node_id": 3,
+          "port_arity": 1
+        },
+        {
+          "node_id": 4,
+          "port_arity": 1
+        },
+        {
+          "node_id": 6,
+          "port_arity": 1
+        },
+        {
+          "node_id": 7,
+          "port_arity": 1
+        }
+      ]
+    }
+  ]
+}

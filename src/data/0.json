@@ -1,0 +1,493 @@
+{
+  "nodes": [
+    {
+      "node_id": 0,
+      "control": {
+        "ctrl_name": "Field",
+        "ctrl_params": [],
+        "ctrl_arity": 0
+      }
+    },
+    {
+      "node_id": 1,
+      "control": {
+        "ctrl_name": "Aura",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 2,
+      "control": {
+        "ctrl_name": "Child",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 3,
+      "control": {
+        "ctrl_name": "Aura",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 4,
+      "control": {
+        "ctrl_name": "Child",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 5,
+      "control": {
+        "ctrl_name": "Aura",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 6,
+      "control": {
+        "ctrl_name": "Child",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 7,
+      "control": {
+        "ctrl_name": "Aura",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 8,
+      "control": {
+        "ctrl_name": "Child",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 9,
+      "control": {
+        "ctrl_name": "Locale",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 10,
+      "control": {
+        "ctrl_name": "Lion",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 11,
+      "control": {
+        "ctrl_name": "Impala",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 12,
+      "control": {
+        "ctrl_name": "Locale",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 13,
+      "control": {
+        "ctrl_name": "Lion",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 14,
+      "control": {
+        "ctrl_name": "Lion",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 15,
+      "control": {
+        "ctrl_name": "Locale",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 16,
+      "control": {
+        "ctrl_name": "Lion",
+        "ctrl_params": [],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 17,
+      "control": {
+        "ctrl_name": "Area",
+        "ctrl_params": [
+          {
+            "ctrl_int": 0
+          }
+        ],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 18,
+      "control": {
+        "ctrl_name": "GPS",
+        "ctrl_params": [
+          {
+            "ctrl_int": 1
+          }
+        ],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 19,
+      "control": {
+        "ctrl_name": "GPS",
+        "ctrl_params": [
+          {
+            "ctrl_int": 0
+          }
+        ],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 20,
+      "control": {
+        "ctrl_name": "Area",
+        "ctrl_params": [
+          {
+            "ctrl_int": 1
+          }
+        ],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 21,
+      "control": {
+        "ctrl_name": "GPS",
+        "ctrl_params": [
+          {
+            "ctrl_int": 2
+          }
+        ],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 22,
+      "control": {
+        "ctrl_name": "GPS",
+        "ctrl_params": [
+          {
+            "ctrl_int": 3
+          }
+        ],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 23,
+      "control": {
+        "ctrl_name": "Area",
+        "ctrl_params": [
+          {
+            "ctrl_int": 2
+          }
+        ],
+        "ctrl_arity": 1
+      }
+    },
+    {
+      "node_id": 24,
+      "control": {
+        "ctrl_name": "GPS",
+        "ctrl_params": [
+          {
+            "ctrl_int": 4
+          }
+        ],
+        "ctrl_arity": 1
+      }
+    }
+  ],
+  "place_graph": {
+    "num_regions": 3,
+    "num_nodes": 25,
+    "num_sites": 0,
+    "rn": [
+      {
+        "source": 0,
+        "target": 0
+      },
+      {
+        "source": 0,
+        "target": 1
+      },
+      {
+        "source": 0,
+        "target": 3
+      },
+      {
+        "source": 0,
+        "target": 5
+      },
+      {
+        "source": 0,
+        "target": 7
+      },
+      {
+        "source": 1,
+        "target": 9
+      },
+      {
+        "source": 1,
+        "target": 12
+      },
+      {
+        "source": 1,
+        "target": 15
+      },
+      {
+        "source": 2,
+        "target": 17
+      },
+      {
+        "source": 2,
+        "target": 20
+      },
+      {
+        "source": 2,
+        "target": 23
+      }
+    ],
+    "rs": [],
+    "nn": [
+      {
+        "source": 1,
+        "target": 2
+      },
+      {
+        "source": 3,
+        "target": 4
+      },
+      {
+        "source": 5,
+        "target": 6
+      },
+      {
+        "source": 7,
+        "target": 8
+      },
+      {
+        "source": 9,
+        "target": 10
+      },
+      {
+        "source": 9,
+        "target": 11
+      },
+      {
+        "source": 12,
+        "target": 13
+      },
+      {
+        "source": 12,
+        "target": 14
+      },
+      {
+        "source": 15,
+        "target": 16
+      },
+      {
+        "source": 17,
+        "target": 18
+      },
+      {
+        "source": 17,
+        "target": 19
+      },
+      {
+        "source": 20,
+        "target": 21
+      },
+      {
+        "source": 20,
+        "target": 22
+      },
+      {
+        "source": 23,
+        "target": 24
+      }
+    ],
+    "ns": []
+  },
+  "link_graph": [
+    {
+      "inner": [],
+      "outer": [],
+      "ports": [
+        {
+          "node_id": 1,
+          "port_arity": 1
+        },
+        {
+          "node_id": 2,
+          "port_arity": 1
+        },
+        {
+          "node_id": 10,
+          "port_arity": 1
+        },
+        {
+          "node_id": 18,
+          "port_arity": 1
+        }
+      ]
+    },
+    {
+      "inner": [],
+      "outer": [],
+      "ports": [
+        {
+          "node_id": 3,
+          "port_arity": 1
+        },
+        {
+          "node_id": 4,
+          "port_arity": 1
+        },
+        {
+          "node_id": 13,
+          "port_arity": 1
+        },
+        {
+          "node_id": 21,
+          "port_arity": 1
+        }
+      ]
+    },
+    {
+      "inner": [],
+      "outer": [],
+      "ports": [
+        {
+          "node_id": 5,
+          "port_arity": 1
+        },
+        {
+          "node_id": 6,
+          "port_arity": 1
+        },
+        {
+          "node_id": 14,
+          "port_arity": 1
+        },
+        {
+          "node_id": 22,
+          "port_arity": 1
+        }
+      ]
+    },
+    {
+      "inner": [],
+      "outer": [],
+      "ports": [
+        {
+          "node_id": 7,
+          "port_arity": 1
+        },
+        {
+          "node_id": 8,
+          "port_arity": 1
+        },
+        {
+          "node_id": 16,
+          "port_arity": 1
+        },
+        {
+          "node_id": 24,
+          "port_arity": 1
+        }
+      ]
+    },
+    {
+      "inner": [],
+      "outer": [],
+      "ports": [
+        {
+          "node_id": 9,
+          "port_arity": 1
+        },
+        {
+          "node_id": 17,
+          "port_arity": 1
+        }
+      ]
+    },
+    {
+      "inner": [],
+      "outer": [],
+      "ports": [
+        {
+          "node_id": 11,
+          "port_arity": 1
+        },
+        {
+          "node_id": 19,
+          "port_arity": 1
+        }
+      ]
+    },
+    {
+      "inner": [],
+      "outer": [],
+      "ports": [
+        {
+          "node_id": 12,
+          "port_arity": 1
+        },
+        {
+          "node_id": 20,
+          "port_arity": 1
+        }
+      ]
+    },
+    {
+      "inner": [],
+      "outer": [],
+      "ports": [
+        {
+          "node_id": 15,
+          "port_arity": 1
+        },
+        {
+          "node_id": 23,
+          "port_arity": 1
+        }
+      ]
+    }
+  ]
+}

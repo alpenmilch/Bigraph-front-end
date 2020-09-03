@@ -94,7 +94,7 @@ export default class Bigraph {
                     if (d.r != null) return d.r;
                     else return 3;
                 }).strength(1))
-                .force("link", link(links).distance(d => d.source.r - d.target.r).strength(1))
+                .force("link", link(links).distance(d => d.source.r - d.target.r).strength(1).bias((d)=>{return d.source.r/(d.source.r+d.target.r)}))
                 .force("plink", link(portlink).distance(d => d.source.r - 4).strength(2))
                 .force("edge", link(edge).distance(1).strength(0.03))
                 .force("radial", isolate(d3.forceRadial(), function (d) {
@@ -241,7 +241,6 @@ export default class Bigraph {
             const allname = ng.selectAll("text").join("text");
             const labels = svg.selectAll(".labelgraph").join("g").selectAll("text").join("text")
             const tgraph = svg.append("g")
-
 
             var transform;
 
@@ -529,6 +528,7 @@ function link(links) {
       distances,
       nodes,
       count,
+      bia = defaultBias,
       bias,
       iterations = 1;
 
@@ -577,13 +577,21 @@ function link(links) {
       count[link.target.index] = (count[link.target.index] || 0) + 1;
     }
 
-    for (i = 0, bias = new Array(m); i < m; ++i) {
-      link = links[i];
-      bias[i] = count[link.source.index] / (count[link.source.index] + count[link.target.index]);
-    }
 
+    bias = new Array(m); initializeBias();
     strengths = new Array(m); initializeStrength();
     distances = new Array(m); initializeDistance();
+  }
+
+  function initializeBias(){
+      if (!nodes || !links) return;
+      for (let i = 0, n = links.length; i < n; ++i) {
+          let link = links[i];
+          bias[i] = bia(link)
+      }
+  }
+  function defaultBias(link){
+      return count[link.source.index] / (count[link.source.index] + count[link.target.index]);
   }
 
   function initializeStrength() {
@@ -606,6 +614,10 @@ function link(links) {
     nodes = _;
     initialize();
   };
+
+  force.bias = function(_) {
+      return arguments.length ? (bia = typeof _ === "function" ? _ : constant$7(+_), initializeBias(), force) : strength;
+  }
 
   force.links = function(_) {
     return arguments.length ? (links = _, initialize(), force) : links;
